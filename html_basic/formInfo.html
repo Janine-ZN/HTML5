@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form-表单</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>个人信息</legend>
+        <table bgcolor="#f0ffff" border="1px" width="800px" cellpadding="3px">
+            <tr>
+                <td align="right">用户名：</td>
+                <td><input type="text" name="uname"></td>
+            </tr>
+            <tr>
+                <td align="right"> 密码：</td>
+                <td><input type="password" name="upwd"></td>
+            </tr>
+            <tr>
+                <td align="right"> 籍贯：</td>
+                <td><select>
+                    <option>北京</option>
+                    <option>北京</option>
+                    <option>北京</option>
+                    <option>北京</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td align="right">性别：</td>
+                <td><input type="radio" id="man" name="gender">
+                    <label for="man">男</label>
+                    <input type="radio" id="woman" name="gender">
+                    <label for="woman">女</label>
+                    <input type="radio" id="none" name="gender">
+                    <label for="none">保密</label></td>
+            </tr>
+            <tr>
+                <td align="right"> 头像：</td>
+                <td><input type="file" name="header"><br/></td>
+            </tr>
+            <tr>
+                <td colspan="2">愿意到以下城市工作：</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><select size="4" name="city">
+                    <option>北京</option>
+                    <option>北京</option>
+                    <option>北京</option>
+                    <option>北京</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td align="right"> 留言：</td>
+                <td><textarea name="liuyan" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="提交"><input type="reset" value="清空"></td>
+            </tr>
+        </table>
+
+
+    </fieldset>
+</form>
+
+
+</body>
+</html>

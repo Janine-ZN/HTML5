@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单练习</title>
+</head>
+<body>
+<!--表单练习-->
+<form action="http://baidu.com">
+    <fieldset>
+        <legend>基本信息</legend>
+        <aside>
+            请输入你的车型：<input type="text" list="car">
+            <datalist id="car">
+                <option>奔驰</option>
+                <option>宝马</option>
+                <option>奥迪</option>
+            </datalist>
+            <br>
+        </aside>
+        <section>
+            <select>
+                <optgroup label="北京">
+                    <option>朝阳区</option>
+                    <option>朝阳区</option>
+                    <option>朝阳区</option>
+                    <option>朝阳区</option>
+                </optgroup>
+                <optgroup label="广州">
+                    <option>哈哈哈</option>
+                    <option>朝阳区</option>
+                    <option>朝阳区</option>
+                    <option>朝阳区</option>
+                </optgroup>
+            </select>
+            <br>
+        </section>
+
+        <label for="account">账户：</label><input type="text" id="account"><br>
+        <label for="pwd">密码：</label><input type="password" id="pwd"><br>
+        <label>密码：<input type="password"></label><br>
+        <label for="bbb">账户：</label><input type="text" id="aaa"><br>
+        <label for="aaa">密码：</label><input type="password" id="bbb"><br>
+
+        性别：
+        <input type="radio" name="gender" id="man">
+        <label for="man">男</label>
+        <input type="radio" name="gender" id="woman">
+        <label for="woman">女</label>
+        <input type="radio" name="gender" checked>保密
+        <br/>
+        <!-- hobby="篮球&足球" hobby[]可以把选中的数据放到数组中 -->
+        爱好：
+        <input type="checkbox" name="hobby[]">篮球
+        <input type="checkbox" name="hobby[]">足球
+        <input type="checkbox" name="hobby[]" checked>棒球
+        <input type="checkbox" name="hobby[]" checked>足浴
+
+        <br/>
+        <input type="text" value="123" name="aa">
+        <input type="submit">
+
+    </fieldset>
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>html5 新特性 -- 进度条</h3>
+    <!-- 左右晃动进度条 -->
+    <progress></progress>
+    <hr/>
+    <!-- 固定值进度条 -->
+    <progress value="0.3" id="p3"></progress>
+    <script>
+        // 1. 获取进度条
+        var p3 = document.getElementById("p3");
+        // 2. 创建变量保存value值
+        var v = 0;
+        // 3. 创建定时器执行
+        var timer = setInterval(() => {
+            // 4. 修改value
+            v += 0.1;
+            p3.value = v;
+            // 5. 判断当value值大于0.9停止
+            if(p3.value > 0.8){
+                clearInterval(timer);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

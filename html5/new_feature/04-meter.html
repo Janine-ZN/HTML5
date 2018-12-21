@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>html5 新特性 -- 刻度尺</h3>
+    <meter min="0" max="100000" low="10000" high="90000" optimum="99999" value="0" id="meter"></meter>
+    <script>
+        var meter=document.getElementById("meter");
+        var v = 1000;
+        var timer = setInterval(() => {
+            v += 5000;
+            meter.value = v;
+            if(meter.value > 99999){
+                clearInterval(timer);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

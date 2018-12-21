@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>了解HTML5新特性-表单新 input type</h3>
+    <form action="">
+        <!-- email 验证功能 点击提交按钮触发验证机制 -->
+        <!-- @qq.com a@qq.com \w{1,}@\w{1,} -->
+        您的邮箱：<input type="email" name="myemail" />
+        <br/>
+        <!-- url 验证功能 点击提交按钮触发验证机制 -->
+        <!-- http://www.qq.com -->
+        <!-- \w{1,}:\w{1,} -->
+        您的网址：<input type="url" name="myurl" />
+        <br/>
+        <!-- 年龄验证 输入数字 -->
+        <!-- min 最小值 max 最大值 step 步长 -->
+        您的年龄：<input type="number" min="18" max="45" step="3" name="myage" />
+        <br/>
+        您喜欢的颜色：<input type="color" name="mycolor" />
+        <br/>
+        <!-- date 要谨慎使用 兼容性差 -->
+        出发时间：<input type="date" name="mydate" />
+        <br/>
+        <input type="submit" value="提交" /> 
+
+    </form>
+</body>
+</html>
