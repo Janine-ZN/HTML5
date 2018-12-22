@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #ccc;
+            text-align: center
+        }
+        .container{
+            position: relative;
+        }
+        .ctrl{
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -60px;
+            margin-left: -60px;
+        }
+        .ctrl img{
+            width: 120px;
+            height: 120px;
+        }
+        .ad{
+            position:absolute;  /* 绝对定位 */
+            width:400px;
+            height: 300px;      /* 修改高度宽度 */
+            left: 50%;
+            top: 50%;           /* 居中 */
+            margin-left: -200px;    
+            margin-top: -150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 最外层父元素 -->
+    <div class="container">
+        <!-- 内面元素 视频 图片 -->
+        <!-- 视频 -->
+        <video src="../res/x.mp4" id="v3"></video>
+        <!-- 广告 -->
+        <img src="../res/ad.png" class="ad">
+        <!-- 按钮图片 -->
+       <a class="ctrl">
+           <img src="../res/play.png">
+       </a>
+    </div>
+    <script>
+        // 1. 获取所需选择器
+        var container = document.querySelector(".container");
+        var ctrl = document.querySelector(".ctrl");
+        var v3 = document.getElementById("v3");
+        var img = document.querySelector(".ctrl img");
+        // 2. 为父元素绑定鼠标移入移除事件
+        container.onmouseenter = function () {
+            ctrl.style.display = "block";
+        }
+        container.onmouseleave = function () {
+            ctrl.style.display = "none"
+        }
+        // 3. 点击播放的按钮 播放或者暂停 视频播放
+        ctrl.onclick = function (e) {
+            e.preventDefault(); // a submit button
+            if(v3.paused){
+                v3.play();
+                img.src="../res/pause.png"; // 换暂停图片
+            }else{
+                v3.pause();
+                img.src="../res/play.png";  // 换播放图片
+            }
+        }
+        // 4. 广告 播放视频广告隐藏 暂停播放广告显示
+        var ad = document.querySelector(".ad");
+        v3.onplay=function(){
+            ad.style.display = "none";
+        }
+        v3.onpause=function(){
+            ad.style.display = "block";
+        }
+    </script>
+</body>
+</html>
