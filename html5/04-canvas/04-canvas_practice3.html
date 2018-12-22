@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ca, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{text-align: center}
+        canvas{background-color: #ccc;}
+    </style>
+</head>
+<body>
+    <!-- 创建画布 -->
+    <canvas width="500" height="400" id="c3">
+        您的浏览器版本太低，请升级！
+    </canvas>
+    <script>
+        // canvas 绘制图形通过js代码
+        // 1. 获取画布
+        var c3 = document.getElementById("c3");
+        // 2. 获取画笔
+        var ctx = c3.getContext("2d");
+        var x = 0;
+        var y = 0;
+        // 3. 创建定时器
+        var timer = null;
+        var xDirection = 1; // 方向 1 向右 -1 向左
+        var yDirection = 1; // 方向 1 向下 -1 向上
+        timer = setInterval(() => {
+            // 3.1 修改 x+1
+            x += 1 * xDirection;
+            y += 1 * yDirection;
+            // 3.2 清除画布上所有内容
+            ctx.clearRect(0,0,500,400);
+            // 3.3 重新绘制矩形
+            // 3.3.1 设置填充样式
+            ctx.fillStyle = "#e4393c";
+            // 3.3.2 绘制填充样式
+            ctx.fillRect(x,y,100,80);
+            // 判读方向
+            if(x > 400){           // 矩形到最右侧
+                xDirection = -1;    // 向左移动
+            }else if(x < 1){        // 矩形到最左侧
+                xDirection = 1;     // 向右移动
+            }
+            if( y > 320){           // 矩形到最右侧
+                yDirection = -1;    // 向左移动
+            }else if(y < 1){        // 矩形到最左侧
+                yDirection = 1;     // 向右移动
+            }
+        }, 10);
+    </script>
+</body>
+</html>

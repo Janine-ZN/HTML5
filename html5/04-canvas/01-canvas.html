@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ca, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{text-align: center}
+        canvas{background-color: #ccc;}
+    </style>
+</head>
+<body>
+    <!-- 创建画布 -->
+    <canvas width="500" height="400" id="c3">
+        您的浏览器版本太低，请升级！
+    </canvas>
+    <script>
+        // canvas 绘制图形通过js代码
+        // 1. 获取画布
+        var c3 = document.getElementById("c3");
+        // 2. 获取画笔
+        var ctx = c3.getContext("2d");
+        // 3. 设置填充样式
+        ctx.fillStyle = "#e4393c";
+        // 4. 绘制填充样式
+        ctx.fillRect(50,50,100,80);
+        // 5. 设置描边样式 描边宽度
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 1;
+        // 6. 绘制描边矩形
+        ctx.strokeRect(250,200,100,80);
+
+        // 左下角和右下角绘制两个矩形
+        ctx.strokeStyle="green"
+        ctx.strokeRect(0,320,100,80)
+        ctx.strokeRect(400,320,100,80)
+
+        // 7. 清除矩形
+        ctx.clearRect(0,0,200,400)
+
+
+        // ctx.fillRect(0,0,100,80);
+        // ctx.fillRect(400,0,100,80); 
+        // ctx.fillRect(0,320,100,80);
+        // ctx.fillRect(200,250,100,80);
+        // ctx.fillRect(400,320,100,80); 
+    </script>
+</body>
+</html>
