@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="checkbox" id="c3">是否播放背景音乐
+    <audio src="../res/bg.mp3" id="a3"></audio>    
+    <script>
+        // 1. 获取所有元素
+        var c3 = document.getElementById("c3")
+        var a3 = document.getElementById("a3")
+        // 2. 为复选框绑定onchange事件
+        c3.onchange = function () { // 为复选框绑定事件
+            if(this.checked){   // 如果当前选中状态
+            // 2.1 调整音量 0 
+                a3.volume = 0;
+                a3.play();  // 播放音频
+                // 创建定时器
+                var t = setInterval(() => {
+                    // 修改音量 0.1
+                    a3.volume += 0.1
+                    // 音量大于 0.9 停止定时器
+                    if(a3.volume>0.9){
+                        clearInterval(t)
+                    }
+                }, 500);
+                
+            }else {
+                a3.pause(); // 暂停播放
+            }
+        }
+    </script>
+</body>
+</html>
