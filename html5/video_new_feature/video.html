@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>html5 新特性 -- 视频播放</h3>
+    <video id="v3" src="../res/x.mp4" controls muted loop preload="metadata" poster="../res/ad.png">
+        您的浏览器版本过低，请升级！！！
+    </video>
+    <script>
+        var v3 = document.getElementById("v3");
+        v3.volume = 0.7;
+        v3.playbackRate = 5;
+    </script>
+</body>
+</html>
