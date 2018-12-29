@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{text-align: center}
+        canvas{background: #ccc}
+    </style>
+</head>
+<body>
+    <canvas width="800" height="600" id="c3"></canvas>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // 1. 获取画布
+        var c3 = document.getElementById("c3");
+        var ctx = c3.getContext("2d");
+        var color_list = ["#14e93c","#eff93c","#ef3dec","#e2d11e"]
+        // 3. 发送ajax 请求 /sales
+        $.ajax({
+            url:"/sales",
+            success : function (res) {
+                for (let i = 0; i < res.length; i++) {
+                    let w = 50;             // 柱子宽度
+                    let h = res[i].value;   // 柱子高度
+                    var x = i*100 + 50;     // 柱子x
+                    let y = 600 - h;        // 柱子y
+                    // console.log(w+","+h+","+x+","+y)
+                    ctx.fillStyle = color_list[i];
+                    ctx.fillRect(x,y,w,h);
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
